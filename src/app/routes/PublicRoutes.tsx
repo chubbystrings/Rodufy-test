@@ -22,7 +22,6 @@ const PublicRoutes: React.FC<{ Component: React.FC; path: string }> = ({
 
 const LoggedInUserRoute = ({ children }: { children: any }) => {
   if (checkIsLoggedIn()) {
-    console.log(true)
     return <Navigate to="/posts" replace />;
   }
 

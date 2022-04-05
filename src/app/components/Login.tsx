@@ -1,4 +1,4 @@
-import React, { FormEvent, useEffect, useState } from "react";
+import React, { FormEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import AuthTemplate from "../template/Auth";
 import useAuth from "../hooks/useAuth";
@@ -19,7 +19,6 @@ export default function LoginComponent() {
       const { error } = await login(email, password);
 
       if (error) {
-        console.log(error);
         setLoading(false);
       } else {
         navigate("/posts", { replace: true });
@@ -29,9 +28,7 @@ export default function LoginComponent() {
     }
   };
 
-  useEffect(() => {
-    console.log();
-  }, [loading]);
+
   return (
     <AuthTemplate>
       <LoginWrapper>
